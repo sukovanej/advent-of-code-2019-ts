@@ -4,8 +4,8 @@
   "description": "Solution of advent of code 2019 in typescript",
   "main": "main.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register tests/**/*.spec.ts",
-    "lint": "./node_modules/eslint/bin/eslint.js src/**/* tests/**/*"
+    "test": "./node_modules/.bin/mocha -r ts-node/register tests/**/*.spec.ts",
+    "lint": "./node_modules/.bin/eslint src/**/* tests/**/*"
   },
   "keywords": [
     "adventofcode",
