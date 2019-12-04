@@ -13,10 +13,7 @@ export class Line {
     this.first = start;
     this.second = end;
 
-    if (
-      (start.y == end.y && start.x < end.x) ||
-      (start.x == end.x && start.y < end.y)
-    ) {
+    if ((start.y == end.y && start.x < end.x) || (start.x == end.x && start.y < end.y)) {
       this.start = start;
       this.end = end;
     } else {
@@ -52,18 +49,13 @@ function getCrossPointsForLine(first: Line, second: Line): Array<Point> {
   return [];
 }
 
-export function getCrossPoints(
-  wire1: Array<Line>,
-  wire2: Array<Line>
-): Array<Point> {
+export function getCrossPoints(wire1: Array<Line>, wire2: Array<Line>): Array<Point> {
   let crossPoints = [];
 
   for (const line1 of wire1) {
     for (const line2 of wire2) {
       crossPoints = crossPoints.concat(
-        getCrossPointsForLine(line1, line2).filter(
-          point => point.x != 0 && point.y != 0
-        )
+        getCrossPointsForLine(line1, line2).filter(point => point.x != 0 && point.y != 0),
       );
     }
   }
@@ -75,13 +67,13 @@ function getNextPoint(previousPoint: Point, newInput: string): Point {
   const direction = newInput[0];
   const value = Number(newInput.slice(1));
 
-  if (direction == "R") {
+  if (direction == 'R') {
     return new Point(previousPoint.x + value, previousPoint.y);
-  } else if (direction == "L") {
+  } else if (direction == 'L') {
     return new Point(previousPoint.x - value, previousPoint.y);
-  } else if (direction == "U") {
+  } else if (direction == 'U') {
     return new Point(previousPoint.x, previousPoint.y + value);
-  } else if (direction == "D") {
+  } else if (direction == 'D') {
     return new Point(previousPoint.x, previousPoint.y - value);
   }
 }
@@ -100,8 +92,8 @@ export function getWire(wireRepr: Array<string>): Array<Line> {
 }
 
 export default function solution1(line1: string, line2: string): number {
-  const wireRepr1 = line1.split(",");
-  const wireRepr2 = line2.split(",");
+  const wireRepr1 = line1.split(',');
+  const wireRepr2 = line2.split(',');
 
   const wire1 = getWire(wireRepr1);
   const wire2 = getWire(wireRepr2);

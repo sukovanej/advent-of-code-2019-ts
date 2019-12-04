@@ -1,6 +1,6 @@
 const instructionMap = {
   1: (left: number, right: number): number => left + right,
-  2: (left: number, right: number): number => left * right
+  2: (left: number, right: number): number => left * right,
 };
 
 export default function solution3(inputList: Array<number>): Array<number> {

@@ -1,4 +1,4 @@
-import solution1 from "./puzzle_1";
+import solution1 from './puzzle_1';
 
 export default function solution2(mass: number): number {
   const fuel = solution1(mass);

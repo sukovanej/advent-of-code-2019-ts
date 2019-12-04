@@ -1,9 +1,6 @@
-import solution3 from "./puzzle_3";
+import solution3 from './puzzle_3';
 
-export default function solution4(
-  inputList: Array<number>,
-  desiredValue: number
-): number {
+export default function solution4(inputList: Array<number>, desiredValue: number): number {
   for (let i = 0; i < inputList.length; i++) {
     for (let j = 0; j < inputList.length; j++) {
       inputList[1] = i;
